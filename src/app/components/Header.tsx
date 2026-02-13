@@ -1,10 +1,11 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
-
+import logo from "@/assets/images/logo.png";
 interface HeaderProps {
   isHomePage?: boolean;
 }
+
 
 export function Header({ isHomePage = false }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,19 +28,13 @@ export function Header({ isHomePage = false }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo/Nombre */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-primary text-white px-3 py-1 rounded">
-              <span className="text-xl font-bold">10</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-sm md:text-base text-foreground">
-                Celeste y Blanca
-              </span>
-              <span className="text-xs text-muted-foreground hidden sm:block">
-                IUPA
-              </span>
-            </div>
-          </Link>
+<Link to="/" className="flex items-center space-x-2">
+  <img
+    src={logo}
+    alt="Lista 10"
+    className="h-20 w-auto object-contain"
+  />
+</Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
