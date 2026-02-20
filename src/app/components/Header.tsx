@@ -2,12 +2,12 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
 import logo from "@/assets/images/logo.png";
+
 interface HeaderProps {
   isHomePage?: boolean;
 }
 
-
-export function Header({ isHomePage = false }: HeaderProps) {
+export function Header({ isHomePage: _isHomePage = false }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -27,45 +27,29 @@ export function Header({ isHomePage = false }: HeaderProps) {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-primary/20 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo/Nombre */}
-<Link to="/" className="flex items-center space-x-2">
-  <img
-    src={logo}
-    alt="Lista 10"
-    className="h-20 w-auto object-contain"
-  />
-</Link>
+          <Link to="/" className="flex items-center space-x-2">
+            <img src={logo} alt="Lista 10" className="h-20 w-auto object-contain" />
+          </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            {isHomePage && (
-              <>
-                <button
-                  onClick={() => scrollToSection("somos")}
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  Somos
-                </button>
-                <button
-                  onClick={() => scrollToSection("proyecto")}
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  Proyecto
-                </button>
-                <button
-                  onClick={() => scrollToSection("votamos")}
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  ¿Qué votamos?
-                </button>
-                <button
-                  onClick={() => scrollToSection("contacto")}
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  Contacto
-                </button>
-              </>
-            )}
+            <button
+              onClick={() => scrollToSection("inicio")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Inicio
+            </button>
+            <button
+              onClick={() => scrollToSection("somos")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Somos
+            </button>
+            <button
+              onClick={() => scrollToSection("proyecto")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Proyecto
+            </button>
             <Link
               to="/candidatos"
               className="text-foreground hover:text-primary transition-colors"
@@ -78,9 +62,20 @@ export function Header({ isHomePage = false }: HeaderProps) {
             >
               Propuestas
             </Link>
+            <button
+              onClick={() => scrollToSection("que-votamos")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Qué votamos
+            </button>
+            <button
+              onClick={() => scrollToSection("contacto")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Contacto
+            </button>
           </nav>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-md text-foreground hover:bg-muted"
@@ -90,38 +85,27 @@ export function Header({ isHomePage = false }: HeaderProps) {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-primary/20">
           <nav className="px-4 py-4 space-y-3">
-            {isHomePage && (
-              <>
-                <button
-                  onClick={() => scrollToSection("somos")}
-                  className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
-                >
-                  Somos
-                </button>
-                <button
-                  onClick={() => scrollToSection("proyecto")}
-                  className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
-                >
-                  Proyecto
-                </button>
-                <button
-                  onClick={() => scrollToSection("votamos")}
-                  className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
-                >
-                  ¿Qué votamos?
-                </button>
-                <button
-                  onClick={() => scrollToSection("contacto")}
-                  className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
-                >
-                  Contacto
-                </button>
-              </>
-            )}
+            <button
+              onClick={() => scrollToSection("inicio")}
+              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Inicio
+            </button>
+            <button
+              onClick={() => scrollToSection("somos")}
+              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Somos
+            </button>
+            <button
+              onClick={() => scrollToSection("proyecto")}
+              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Proyecto
+            </button>
             <Link
               to="/candidatos"
               onClick={() => setMobileMenuOpen(false)}
@@ -136,6 +120,18 @@ export function Header({ isHomePage = false }: HeaderProps) {
             >
               Propuestas
             </Link>
+            <button
+              onClick={() => scrollToSection("que-votamos")}
+              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Qué votamos
+            </button>
+            <button
+              onClick={() => scrollToSection("contacto")}
+              className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Contacto
+            </button>
           </nav>
         </div>
       )}

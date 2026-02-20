@@ -1,11 +1,20 @@
-import { ArrowRight, Users, Target, CheckCircle, Mail } from "lucide-react";
+import {
+  ArrowRight,
+  Users,
+  Target,
+  CheckCircle,
+  CircleSlash2,
+  Mail,
+} from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
+import fondoHero from "@/assets/images/fondo.png";
+import fondoManifiesto from "@/assets/images/manifiesto.png";
+import diezLogo from "@/assets/images/diez.png";
 
 export function Home() {
   const [formData, setFormData] = useState({
@@ -13,12 +22,53 @@ export function Home() {
     email: "",
     mensaje: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Crear el mailto link con los datos del formulario
-    const mailtoLink = `mailto:celesteyblancaiupa@gmail.com?subject=Contacto desde el sitio web&body=Nombre: ${formData.nombre}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMensaje:%0D%0A${formData.mensaje}`;
-    window.location.href = mailtoLink;
+    setIsSubmitting(true);
+    setFormStatus(null);
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/celesteyblancaiupa@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            nombre: formData.nombre,
+            email: formData.email,
+            mensaje: formData.mensaje,
+            _subject: "Contacto desde el sitio web - Lista 10",
+            _captcha: "false",
+          }),
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error("No se pudo enviar el mensaje.");
+      }
+
+      setFormData({ nombre: "", email: "", mensaje: "" });
+      setFormStatus({
+        type: "success",
+        message: "Mail enviado, gracias por tu mensaje.",
+      });
+    } catch {
+      setFormStatus({
+        type: "error",
+        message: "No se pudo enviar el mensaje. Intentá nuevamente.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -33,21 +83,20 @@ export function Home() {
       <Header isHomePage={true} />
 
       {/* HERO / INICIO */}
-      <section className="relative bg-gradient-to-br from-primary via-secondary to-accent text-white overflow-hidden">
-        {/* Textura de fondo sutil */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v6h6V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-        
+      <section
+        className="relative text-white overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: `url(${fondoHero})` }}
+      >
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <div className="max-w-4xl">
+          <div id="inicio" className="max-w-4xl scroll-mt-24">
             {/* Número de lista destacado */}
             <div className="inline-flex items-center space-x-3 mb-6">
-              <div className="bg-white text-primary px-6 py-3 rounded-lg">
-                <span className="text-4xl md:text-5xl font-bold">10</span>
+              <div>
+                <img
+                  src={diezLogo}
+                  alt="Lista 10"
+                  className="h-[5.6rem] md:h-[7rem] w-auto object-contain"
+                />
               </div>
               <div className="text-left">
                 <div className="text-2xl md:text-4xl font-bold">
@@ -84,22 +133,21 @@ export function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => scrollToSection("proyecto")}
-                className="bg-white text-primary px-6 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all flex items-center justify-center space-x-2"
+                className="h-12 px-6 bg-white text-primary rounded-lg font-bold hover:bg-opacity-90 transition-all flex items-center justify-center space-x-2"
               >
                 <span>Conocer el proyecto</span>
                 <ArrowRight size={20} />
               </button>
-              <Link to="/candidatos">
-                <Button
-                  variant="outline"
-                  className="w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-primary"
-                >
-                  Manifiesto
-                </Button>
-              </Link>
+              <Button
+                variant="outline"
+                onClick={() => scrollToSection("manifiesto")}
+                className="h-12 px-6 w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-primary"
+              >
+                Manifiesto
+              </Button>
               <button
                 onClick={() => scrollToSection("votamos")}
-                className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-primary transition-all"
+                className="h-12 px-6 bg-transparent border-2 border-white text-white rounded-lg font-bold hover:bg-white hover:text-primary transition-all"
               >
                 Entender el Consejo Superior
               </button>
@@ -165,6 +213,68 @@ export function Home() {
               </div>
             </div>
           </div>
+
+          <div
+            id="manifiesto"
+            className="mt-12 rounded-2xl p-8 md:p-10 border-2 border-primary/20 scroll-mt-20 bg-cover bg-center"
+            style={{ backgroundImage: `url(${fondoManifiesto})` }}
+          >
+            <div className="inline-block bg-primary/20 text-primary px-4 py-2 rounded-full mb-4">
+              <span className="font-bold">Manifiesto</span>
+            </div>
+            <div className="space-y-4 text-base md:text-lg leading-relaxed text-foreground/90">
+              <p>
+                La universidad existe cada vez que una comunidad decide pensar
+                en común. No es solo intercambio de saberes, también es
+                conversación, producción de conocimiento, soberanía, encuentro,
+                creación. La universidad existe cuando el pensamiento se vuelve
+                asunto colectivo.
+              </p>
+              <p>
+                La universidad pública nació para acercar lo que estaba lejos,
+                para abrir puertas. Para unir. Esa idea, aunque viva, necesita
+                ser revisada, discutida y reorientada hacia adelante cada vez
+                que el viento cambia.
+              </p>
+              <p>
+                El IUPA forma parte de esa tradición y se sostuvo en el tiempo
+                por el compromiso cotidiano de sus trabajadores, docentes y
+                estudiantes. Por prácticas de enseñanza, de estudio, de
+                creación, de investigación, de producción artística y de
+                formación constante. Se sostiene como se sostienen las cosas
+                importantes, con amor, con paciencia y convicción, con trabajo
+                diario, con estudio y creatividad, con ese especial cuidado que
+                tenemos con los espacios que habitamos.
+              </p>
+              <p>Cuidar nuestra universidad es cuidar nuestra casa.</p>
+              <p>
+                En IUPA nos formamos desde la sensibilidad, desde el
+                pensamiento crítico, desde el cuerpo, la voz, la imagen, el
+                sonido. Nuestra manera de producir conocimiento es también crear
+                e imaginar futuros posibles.
+              </p>
+              <p>
+                Este momento abre una posibilidad histórica para pensar cómo se
+                organiza esa vida común. Qué reglas la sostienen, qué voces
+                participan, qué lugar ocupa cada parte de la comunidad
+                universitaria.
+              </p>
+              <p>
+                La democracia es una forma de cuidar lo público. Cuidar nuestra
+                casa.
+              </p>
+              <p>
+                Desde acá afirmamos una universidad de todos, una universidad en
+                serio. Que produce arte y conocimiento, que dialoga con su
+                territorio, que dialoga con el mundo, que reconoce el trabajo
+                que la hizo posible y que asume un nuevo lugar en la historia.
+                futuros escribir
+              </p>
+              <p>
+                Dar este paso es poner la universidad al frente. En serio.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -207,23 +317,62 @@ export function Home() {
             </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                "Gobernada por su comunidad",
-                "Pública, gratuita y accesible",
-                "Democrática y transparente",
-                "Académicamente sólida",
-                "Con carrera administrativa para el personal de apoyo",
-                "Integrada al desarrollo provincial",
-                "Con arraigo territorial",
-                "Moderna y conectada a redes universitarias",
+                {
+                  positiva: "Gobernada por su comunidad",
+                  negativa:
+                    "Gobernada por un rector no elegido democráticamente",
+                },
+                {
+                  positiva: "Directores elegidos en democracia",
+                  negativa: "Directores normalizadores impuestos",
+                },
+                {
+                  positiva:
+                    "Articulada con el sistema científico nacional y redes universitarias",
+                  negativa: "Arcaica, endogámica, anárquica",
+                },
+                {
+                  positiva: "Transparente y con reglas claras",
+                  negativa: "Opaca, sin normativa ni previsibilidad",
+                },
+                {
+                  positiva: "Sólida académicamente",
+                  negativa:
+                    "Desordenada, sin carrera docente, con subestimación de la vocación científica",
+                },
+                {
+                  positiva:
+                    "Carrera administrativa y posibilidad real de crecimiento profesional para trabajadores",
+                  negativa: "Ascenso por negociación discrecional",
+                },
+                {
+                  positiva: "Diálogo y participación",
+                  negativa: "Unilateralidad, violencia",
+                },
+                {
+                  positiva: "Integrada al desarrollo provincial",
+                  negativa:
+                    "Aislada y desconectada de los organismos y proyectos estratégicos provinciales",
+                },
               ].map((item, i) => (
                 <div
                   key={i}
                   className="bg-white p-4 rounded-lg border border-primary/20 hover:border-primary transition-all hover:shadow-md"
                 >
-                  <div className="flex items-start space-x-2">
+                  <div className="flex items-start space-x-2 mb-2">
                     <CheckCircle className="text-primary flex-shrink-0 mt-0.5" size={20} />
-                    <span className="text-foreground">{item}</span>
+                    <span className="text-foreground font-medium">
+                      {item.positiva}
+                    </span>
                   </div>
+                  {item.negativa && (
+                    <div className="flex items-start space-x-2 border-t border-primary/10 pt-2">
+                      <CircleSlash2 className="text-destructive flex-shrink-0 mt-0.5" size={20} />
+                      <span className="text-foreground font-medium line-through decoration-destructive/80">
+                        {item.negativa}
+                      </span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -271,7 +420,7 @@ export function Home() {
 
       {/* QUÉ VOTAMOS */}
       <section id="votamos" className="py-16 md:py-24 bg-white scroll-mt-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="que-votamos" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
           <div className="text-center mb-12">
             <div className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full mb-4">
               <span className="font-bold">Información importante</span>
@@ -388,11 +537,23 @@ export function Home() {
                 </div>
                 <Button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full bg-primary hover:bg-primary/90"
                 >
                   <Mail className="mr-2" size={20} />
-                  Enviar mensaje
+                  {isSubmitting ? "Enviando..." : "Enviar mensaje"}
                 </Button>
+                {formStatus && (
+                  <p
+                    className={
+                      formStatus.type === "success"
+                        ? "text-sm text-green-700"
+                        : "text-sm text-red-700"
+                    }
+                  >
+                    {formStatus.message}
+                  </p>
+                )}
               </form>
             </div>
 

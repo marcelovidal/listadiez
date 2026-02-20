@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import martinezFoto from "@/assets/images/candidatos/audiovisual/martinez.png";
 import epifanioFoto from "@/assets/images/candidatos/audiovisual/epifanio.png";
 import lajesFoto from "@/assets/images/candidatos/audiovisual/lajes.png";
@@ -10,16 +10,19 @@ import solanasFoto from "@/assets/images/candidatos/formacion/solanas.png";
 import breviFoto from "@/assets/images/candidatos/movimiento/bevi.png";
 import alibertiFoto from "@/assets/images/candidatos/movimiento/aliberti.png";
 import gelashviliFoto from "@/assets/images/candidatos/movimiento/gelashvili.png";
-import rosalesFoto from "@/assets/images/candidatos/movimiento/rosales.png";
+import enzoFoto from "@/assets/images/candidatos/movimiento/martinez.png";
 import floresFoto from "@/assets/images/candidatos/visuales/flores.png";
 import garciaFoto from "@/assets/images/candidatos/visuales/garcia.png";
 import munozFoto from "@/assets/images/candidatos/visuales/munoz.png";
+import riquelmeFoto from "@/assets/images/candidatos/visuales/riquelme.png";
 import cambaFoto from "@/assets/images/candidatos/musica/camba.png";
 import benitezFoto from "@/assets/images/candidatos/musica/benitez.png";
 import poroyanFoto from "@/assets/images/candidatos/musica/poroyan.png";
+import bascurFoto from "@/assets/images/candidatos/musica/bascur.png";
 import faltaFoto from "@/assets/images/candidatos/falta.png";
 import rolonFoto from "@/assets/images/candidatos/dramatico/rolon.png";
 import quintinFoto from "@/assets/images/candidatos/dramatico/quintin.png";
+import ocuartFoto from "@/assets/images/candidatos/dramatico/ocuart.png";
 import picoFoto from "@/assets/images/candidatos/nodo/pico.png";
 import manriquezFoto from "@/assets/images/candidatos/nodo/manriquez.png";
 import guaragnaFoto from "@/assets/images/candidatos/graduados/guaragna.png";
@@ -162,26 +165,17 @@ Fue productor de contenidos en Canal 10`,
   }, 
   {
     id: 10,
-    nombre: "Lorena Rosales",
-    cargo: "Consejera Docente Titular - Departamento Artes del Movimiento",
+    nombre: "Enzo Martinez",
+    cargo: "Consejero Docente Titular - Departamento Artes del Movimiento",
     claustro: "docente",
     departamentoDocente: "movimiento",
-    bio: "Es profesora de Danza Contemporánea y, maestranda en tendencias contemporáneas de la danza en la UNA.  Ejerció la docencia en la Escuela Experimental de Danza Contemporánea durante 12 años, y actualmente dicta clases de Danza Contemporánea, Contact Improvisación y Composición, en IUPA. Como artista independiente creó obras de danza como Vibra y La piel, ganadoras de las Fiestas Provinciales del Teatro de Neuquén; y obtuvo becas para la creación del Fondo Nacional de las Artes. Participa en la gestión y producción de Festivales y Ciclos que promueven la danza contemporánea local, regional y nacional.",
-    frase: "Una universidad realmente democrática y plural. Que defienda sus principios de ser universidad argentina, pública, gratuita y de calidad. Una universidad que construya conocimiento, que investigue y fortalezca los lazos con nuestros territorios. Promover el arte y en particular la danza, como campo de creación y de pensamiento crítico,  en compromiso con la comunidad. ",
-    foto: rosalesFoto,
+    bio: "....",
+    frase: "... ",
+    foto: enzoFoto,
   }, 
-    {
-    id: 11,
-    nombre: "Lorena Rosales",
-    cargo: "Consejera Docente Titular - Departamento Artes del Movimiento",
-    claustro: "docente",
-    departamentoDocente: "movimiento",
-    bio: "Es profesora de Danza Contemporánea y, maestranda en tendencias contemporáneas de la danza en la UNA.  Ejerció la docencia en la Escuela Experimental de Danza Contemporánea durante 12 años, y actualmente dicta clases de Danza Contemporánea, Contact Improvisación y Composición, en IUPA. Como artista independiente creó obras de danza como Vibra y La piel, ganadoras de las Fiestas Provinciales del Teatro de Neuquén; y obtuvo becas para la creación del Fondo Nacional de las Artes. Participa en la gestión y producción de Festivales y Ciclos que promueven la danza contemporánea local, regional y nacional.",
-    frase: "Una universidad realmente democrática y plural. Que defienda sus principios de ser universidad argentina, pública, gratuita y de calidad. Una universidad que construya conocimiento, que investigue y fortalezca los lazos con nuestros territorios. Promover el arte y en particular la danza, como campo de creación y de pensamiento crítico,  en compromiso con la comunidad. ",
-    foto: rosalesFoto,
-  }, 
+
       {
-    id: 12,
+    id: 11,
     nombre: "Marianela Aliberti",
     cargo: "Consejera Docente Suplente - Departamento Artes del Movimiento",
     claustro: "docente",
@@ -191,7 +185,7 @@ Fue productor de contenidos en Canal 10`,
     foto: alibertiFoto,
   }, 
        {
-    id: 13,
+    id: 12,
     nombre: "Sofia Gelashvili",
     cargo: "Consejera Docente Suplente - Departamento Artes del Movimiento",
     claustro: "docente",
@@ -201,7 +195,7 @@ Fue productor de contenidos en Canal 10`,
     foto: gelashviliFoto,
   },
         {
-    id: 14,
+    id: 13,
     nombre: "Vanesa Flores",
     cargo: "Consejera Docente Titular - Departamento Artes Visuales",
     claustro: "docente",
@@ -211,17 +205,17 @@ Fue productor de contenidos en Canal 10`,
     foto: floresFoto,
   },  
           {
-    id: 15,
+    id: 14,
     nombre: "Nicolás Muñoz",
     cargo: "Consejero Docente Titular - Departamento Artes Visuales",
     claustro: "docente",
     departamentoDocente: "visuales",
-    bio: "Es licenciado en Artes por la Universidad Nacional de San Martín (UNSAM). Desde 2020 se desempeña como profesor de Artes Visuales en cátedras de grabado y arte impreso en el IUPA, y desde 2024 dicta Historia de las Artes Visuales II. Entre 2021 y 2023 fue coordinador de la carrera Tecnicatura en Artes Visuales (IUPA).Es artista independiente y escritor. Desde 2018 publica sus obras desde su taller experimental de edición y producción “Creatura”, donde articula la gráfica, el dibujo y el relato corto como lenguajes.",
+    bio: "Es licenciado en Artes por la Universidad Nacional de San Martín (UNSAM). Desde 2020 se desempeña como profesor de Artes Visuales en cátedras de grabado y arte impreso en el IUPA, y desde 2024 dicta Historia de las Artes Visuales II. Entre 2021 y 2023 fue coordinador de la carrera Tecnicatura en Artes Visuales (IUPA).Es artista independiente y escritor. Desde 2018 publica sus obras desde su taller experimental de edición y producción \"Creatura\", donde articula la gráfica, el dibujo y el relato corto como lenguajes.",
     frase: "Una universidad pública, democrática y cogobernada, que investigue, produzca y enseñe desde el territorio propio. Que fortalezca las artes visuales como espacio de pensamiento crítico, experimentación y compromiso con lo ambiental, lo comunitario y lo colectivo. ",
     foto: munozFoto,
   },
             {
-    id: 16,
+    id: 15,
     nombre: "Emiliana Garcia",
     cargo: "Consejera Docente Suplente - Departamento Artes Visuales",
     claustro: "docente",
@@ -231,17 +225,17 @@ Fue productor de contenidos en Canal 10`,
     foto: garciaFoto,
   }, 
   {
-    id: 17,
+    id: 16,
     nombre: "Cristian Riquelme",
     cargo: "Consejero Docente Suplente - Departamento Artes Visuales",
     claustro: "docente",
     departamentoDocente: "visuales",
     bio: "Es Diseñador Gráfico, especialista en gestión cultural y maestrando en Educación Universitaria. Actualmente es docente y coordinador en el departamento de artes visuales en IUPA.Ejerce la docencia desde hace más de 15 años y ha trabajado en el ámbito municipal y provincial de la gestión cultural.",
     frase: "Una universidad pública, gratuita y de calidad como herramienta de movilidad social para Río Negro. Democratizar el acceso al arte y la cultura.",
-    foto: faltaFoto,
+    foto: riquelmeFoto,
   },
   {
-    id: 18,
+    id: 17,
     nombre: "Ignacio Camba Sans",
     cargo: "Consejero Docente Titular - Departamento de Música",
     claustro: "docente",
@@ -251,27 +245,27 @@ Fue productor de contenidos en Canal 10`,
     foto: cambaFoto,
   },
   {
-    id: 19,
+    id: 18,
     nombre: "Cecilia Beniez",
     cargo: "Consejera Docente Titular - Departamento de Música",
     claustro: "docente",
     departamentoDocente: "musica",
-    bio: "Licenciada en la enseñanza universitaria de las artes (IUPA) (2021), Instructora en canto funcional (2019). Profesora de las cátedras de Canto y de Canto Complementario de la Licenciatura en Música Popular desde el año 2018. Realizó múltiples cursos y seminarios de canto, armonia, escritura academica, arreglos, sonido, y se especializó en idiomas inglés y francés. Jurado del pre-cosquín sede Choele Choel (2022), y sede Zapala (2023 y 2024). Cantante de numerosos proyectos de varios géneros de la música popular, entre los que se destacan “Fisque Menuco” y Relics, proyecto del que continúa siendo parte. Productora, sonidista y conductora del programa televisivo “Con los fisque” (2008-2016)",
+    bio: "Licenciada en la enseñanza universitaria de las artes (IUPA) (2021), Instructora en canto funcional (2019). Profesora de las cátedras de Canto y de Canto Complementario de la Licenciatura en Música Popular desde el año 2018. Realiza múltiples cursos y seminarios de canto, armonia, escritura academica, arreglos, sonido, y se especializa en idiomas inglés y francés. Jurado del pre-cosquín sede Choele Choel (2022), y sede Zapala (2023 y 2024). Cantante de numerosos proyectos de varios géneros de la música popular, entre los que se destacan \"Fisque Menuco\" y Relics, proyecto del que continúa siendo parte. Productora, sonidista y conductora del programa televisivo \"Con los fisque\" (2008-2016)",
     frase: "Una universidad pública, gratuita y de calidad como herramienta de movilidad social para Río Negro. Democratizar el acceso al arte y la cultura.",
     foto: benitezFoto,
   }, 
   {
-    id: 20,
+    id: 21,
     nombre: "Diego Bascur",
     cargo: "Consejero Docente Suplente - Departamento de Música",
     claustro: "docente",
     departamentoDocente: "musica",
-    bio: "Profesor nacional de música: especialidad educación musical. Actualmente preparando el TFI de la lic en enseñanza del arte en la universidad. Cursando la maestría en enseñanza universitaria (Un.Vi.Me) Docente de piano I y II, Piano Compl. I y II. Taller de práctica en conjunto folklore I y II. Docente del taller profesionalizante “Combo Latino”",
+    bio: "Profesor nacional de música: especialidad educación musical. Actualmente preparando el TFI de la lic en enseñanza del arte en la universidad. Cursando la maestría en enseñanza universitaria (Un.Vi.Me) Docente de piano I y II, Piano Compl. I y II. Taller de práctica en conjunto folklore I y II. Docente del taller profesionalizante \"Combo Latino\"",
     frase: "Una universidad pública, gratuita y de calidad como herramienta de movilidad social para Río Negro. Democratizar el acceso al arte y la cultura.",
-    foto: faltaFoto,
+    foto: bascurFoto,
   },
     {
-    id: 21,
+    id: 22,
     nombre: "Gabriela Poroyan",
     cargo: "Consejera Docente Suplente - Departamento de Música",
     claustro: "docente",
@@ -281,7 +275,7 @@ Fue productor de contenidos en Canal 10`,
     foto: poroyanFoto,
   },
       {
-    id: 22,
+    id: 23,
     nombre: "Lilen Quintin",
     cargo: "Consejera Docente Suplente - Departamento Arte Dramático",
     claustro: "docente",
@@ -291,17 +285,17 @@ Fue productor de contenidos en Canal 10`,
     foto: quintinFoto,
   }, 
         {
-    id: 23,
+    id: 24,
     nombre: "Fernando Ocuart",
     cargo: "Consejera Docente Titular - Departamento Arte Dramático",
     claustro: "docente",
     departamentoDocente: "dramatico",
     bio: "....",
     frase: "Una universidad pública, gratuita y de calidad como herramienta de movilidad social para Río Negro. Democratizar el acceso al arte y la cultura.",
-    foto: faltaFoto,
+    foto: ocuartFoto,
   },  
          {
-    id: 24,
+    id: 25,
     nombre: "Silvina Mañueco",
     cargo: "Consejera Docente Suplente - Departamento Arte Dramático",
     claustro: "docente",
@@ -311,7 +305,7 @@ Fue productor de contenidos en Canal 10`,
     foto: faltaFoto,
   },
            {
-    id: 25,
+    id: 26,
     nombre: "Juan Rolón",
     cargo: "Consejerao Docente Suplente - Departamento Arte Dramático",
     claustro: "docente",
@@ -321,7 +315,7 @@ Fue productor de contenidos en Canal 10`,
     foto: rolonFoto,
   },
              {
-    id: 26,
+    id: 27,
     nombre: "Agustín Picco",
     cargo: "Consejero Titular - No Docente",
     claustro: "nodocente",
@@ -330,8 +324,8 @@ Fue productor de contenidos en Canal 10`,
     foto: picoFoto,
   }, 
               {
-    id: 27,
-    nombre: "Agustín Picco",
+    id: 28,
+    nombre: "Paula Manríquez",
     cargo: "Consejera Suplente - No Docente",
     claustro: "nodocente",
     bio: "Es licenciada en Psicopedagogía por la Universidad de la Cuenca del Plata y actualmente finaliza su tesis de Licenciatura y Profesorado en Sociología (UNSJ). Desde 2020 es referente técnica y coordinadora del Área de Accesibilidad en el IUPA. Cuenta con un extenso recorrido en el sistema educativo y de salud, trabajando en pos de la inclusión en instituciones como la escuela especial 1 y APASIDO. Su labor se centra en el acompañamiento de trayectorias y la promoción de la accesibilidad en nuestra universidad, con una mirada técnica sostenida en una profunda convicción de la necesidad de construir vínculos colectivos y la defensa de la educación pública, gratuita, accesible y de calidad como derecho inclaudicable.",
@@ -339,15 +333,15 @@ Fue productor de contenidos en Canal 10`,
     foto: manriquezFoto,
   }, 
                         {
-    id: 28,
+    id: 29,
     nombre: "Yamila Cabezas Bosso",
     cargo: "Consejera Titular - Graduados",
     claustro: "graduado",
-    bio: "...",
+    bio: "Profesora Universitaria de artes visuales con especialidad en grabado y arte impreso.Docente en escuelas primarias y secundarias, en el área de plástica y Artes Visuales desde el 2019.En IUPA he sido parte como ayudante de cátedra de los Talleres de Prácticas Docentes de nivel primario y nivel medio (2018). He participado en muchas capacitaciones docentes a lo largo de estos años incluido un postítulo sobre educación sexual integral.",
     frase: "Vincular la formación universitaria con la realidad actual de las escuelas es vital para que los futuros docentes egresen con herramientas prácticas y efectivas.",
     foto: bossoFoto,
   },           {
-    id: 29,
+    id: 30,
     nombre: "Cecilia Guaragna",
     cargo: "Consejera Suplente - Graduados",
     claustro: "graduado",
@@ -360,6 +354,18 @@ Fue productor de contenidos en Canal 10`,
 
 export function Candidatos() {
   const [filtro, setFiltro] = useState<Filtro>("todos");
+  const filtros: Array<{ value: Filtro; label: string }> = [
+    { value: "todos", label: "Todos" },
+    { value: "docente", label: "Todos los Docentes" },
+    { value: "docente-audiovisual", label: "Audiovisuales" },
+    { value: "docente-musica", label: "Música" },
+    { value: "docente-dramatico", label: "Arte Dramático" },
+    { value: "docente-visuales", label: "Artes Visuales" },
+    { value: "docente-movimiento", label: "Artes del Movimiento" },
+    { value: "docente-formacion", label: "Formación General" },
+    { value: "nodocente", label: "Personal de Apoyo" },
+    { value: "graduado", label: "Graduados/as" },
+  ];
 
   const candidatosFiltrados = candidatos.filter((c) => {
     if (filtro === "todos") return true;
@@ -409,115 +415,40 @@ export function Candidatos() {
       {/* Filtros */}
       <section className="bg-white border-b border-primary/20 sticky top-16 md:top-20 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-wrap gap-3">
-            <Button
-              variant={filtro === "todos" ? "default" : "outline"}
-              onClick={() => setFiltro("todos")}
-              className={
-                filtro === "todos" ? "bg-primary text-white" : "text-foreground"
-              }
+          {/* Mobile: selector compacto */}
+          <div className="md:hidden">
+            <label
+              htmlFor="filtro-candidatos-mobile"
+              className="block text-xs font-semibold uppercase tracking-wide text-foreground/70 mb-2"
             >
-              Todos
-            </Button>
-            <Button
-              variant={filtro === "docente" ? "default" : "outline"}
-              onClick={() => setFiltro("docente")}
-              className={
-                filtro === "docente"
-                  ? "bg-primary text-white"
-                  : "text-foreground"
-              }
+              Filtrar candidatos
+            </label>
+            <select
+              id="filtro-candidatos-mobile"
+              value={filtro}
+              onChange={(e) => setFiltro(e.target.value as Filtro)}
+              className="w-full h-11 rounded-md border border-primary/30 bg-white px-3 text-sm font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
             >
-              Todos los Docentes
-            </Button>
-            <Button
-              variant={filtro === "docente-audiovisual" ? "default" : "outline"}
-              onClick={() => setFiltro("docente-audiovisual")}
-              className={
-                filtro === "docente-audiovisual"
-                  ? "bg-primary text-white"
-                  : "text-foreground"
-              }
-            >
-              Audiovisuales
-            </Button>
-            <Button
-              variant={filtro === "docente-musica" ? "default" : "outline"}
-              onClick={() => setFiltro("docente-musica")}
-              className={
-                filtro === "docente-musica"
-                  ? "bg-primary text-white"
-                  : "text-foreground"
-              }
-            >
-              Música
-            </Button>
-            <Button
-              variant={filtro === "docente-dramatico" ? "default" : "outline"}
-              onClick={() => setFiltro("docente-dramatico")}
-              className={
-                filtro === "docente-dramatico"
-                  ? "bg-primary text-white"
-                  : "text-foreground"
-              }
-            >
-               Arte Dramático
-            </Button>
-            <Button
-              variant={filtro === "docente-visuales" ? "default" : "outline"}
-              onClick={() => setFiltro("docente-visuales")}
-              className={
-                filtro === "docente-visuales"
-                  ? "bg-primary text-white"
-                  : "text-foreground"
-              }
-            >
-              Artes Visuales
-            </Button>
-            <Button
-              variant={filtro === "docente-movimiento" ? "default" : "outline"}
-              onClick={() => setFiltro("docente-movimiento")}
-              className={
-                filtro === "docente-movimiento"
-                  ? "bg-primary text-white"
-                  : "text-foreground"
-              }
-            >
-              Artes del Movimiento
-            </Button>
-            <Button
-              variant={filtro === "docente-formacion" ? "default" : "outline"}
-              onClick={() => setFiltro("docente-formacion")}
-              className={
-                filtro === "docente-formacion"
-                  ? "bg-primary text-white"
-                  : "text-foreground"
-              }
-            >
-             Formación General
-            </Button>
-            <Button
-              variant={filtro === "nodocente" ? "default" : "outline"}
-              onClick={() => setFiltro("nodocente")}
-              className={
-                filtro === "nodocente"
-                  ? "bg-primary text-white"
-                  : "text-foreground"
-              }
-            >
-              Personal de Apoyo
-            </Button>
-            <Button
-              variant={filtro === "graduado" ? "default" : "outline"}
-              onClick={() => setFiltro("graduado")}
-              className={
-                filtro === "graduado"
-                  ? "bg-primary text-white"
-                  : "text-foreground"
-              }
-            >
-              Graduados/as
-            </Button>
+              {filtros.map((item) => (
+                <option key={item.value} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Desktop: botones */}
+          <div className="hidden md:flex flex-wrap gap-3">
+            {filtros.map((item) => (
+              <Button
+                key={item.value}
+                variant={filtro === item.value ? "default" : "outline"}
+                onClick={() => setFiltro(item.value)}
+                className={filtro === item.value ? "bg-primary text-white" : "text-foreground"}
+              >
+                {item.label}
+              </Button>
+            ))}
           </div>
         </div>
       </section>
@@ -570,6 +501,11 @@ export function Candidatos() {
     </div>
   );
 }
+
+
+
+
+
 
 
 
